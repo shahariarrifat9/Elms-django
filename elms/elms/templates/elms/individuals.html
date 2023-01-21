@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eLMS-Search</title>
+    <link rel="stylesheet" href="{% static 'individuals.css'%}">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="img2">
+            <img src="{% static 'img/eLMS logo.png'%}" alt="">
+        </div>
+        <ul class="nav-links">
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+            <li><a href="{% url 'search' %}">Course Search</a></li>
+            <li><a href="{% url 'login' %}">Logout</a></li>
+        </ul>
+    </div>
+    <header style="margin-top: 90px;">
+
+        <div class="header-content">
+            <h2>
+                <span>Spring 221 CSE 4165/CSE 465 (A) : Web Programming</span>
+            </h2>
+
+        </div>
+
+
+    </header>
+    <div class="fullbody">
+
+        <div class="full-content">
+            <h3>
+                <span>Announcement</span>
+            </h3>
+            <div class="announce">
+                <span>
+                    All Course Contents:
+                </span>
+
+                <a
+                    href="https://drive.google.com/drive/folders/1cR5FRbb2FSKi1lKj2rBPX-tfCmwY2Gyi?usp=sharing">https://drive.google.com/drive/folders/1cR5FRbb2FSKi1lKj2rBPX-tfCmwY2Gyi?usp=sharing</a>
+                <br>
+                <span>
+                    Project Group Submission From:
+                </span>
+
+                <a
+                    href="https://drive.google.com/drive/folders/1cR5FRbb2FSKi1lKj2rBPX-tfCmwY2Gyi?usp=sharing">https://drive.google.com/drive/folders/1cR5FRbb2FSKi1lKj2rBPX-tfCmwY2Gyi?usp=sharing</a>
+
+                <span>
+                    {% for c in all %}
+                       <h5>{{c.title}}</h5>
+                       <h5>{{c.content}}</h5>
+                       <h5>{{c.time}}</h5>
+                    {% endfor %}
+                </span>
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+
+    <div class="fullbody">
+        <div class="full-content">
+            <h3>
+                <span>Practice</span>
+            </h3>
+            <span>
+                {% for x in prac %}
+                   <h5>{{x.topic}}</h5>
+                   <h5>{{x.content}}</h5>
+                   <h5>{{x.file}}</h5>
+                   <h5>{{x.createdAt}}</h5>
+                {% endfor %}
+            </span>
+            <div class="announce">
+            </div>
+        </div>
+    </div>
+
+    <div class="fullbody">
+        <div class="full-content">
+            <h3>
+                <span>Homeworks</span>
+            </h3>
+            <span>
+                {% for z in hw %}
+                   <h5>{{z.title}}</h5>
+                   <h5>{{z.details}}</h5>
+                   <h5>{{z.duration}}</h5>
+                   <h5>{{z.marks}}</h5>
+                   <h5>{{z.createdAt}}</h5>
+                {% endfor %}
+            </span>
+            <div class="announce">
+            </div>
+        </div>
+    </div>
+
+    <div class="fullbody">
+        <div class="full-content">
+            <h3>
+                <span>CTs</span>
+            </h3>
+            <span>
+                {% for y in ct %}
+                   <h5>{{y.title}}</h5>
+                   <h5>{{y.details}}</h5>
+                   <h5>{{y.duration}}</h5>
+                   <h5>{{y.marks}}</h5>
+                   <h5>{{y.createdAt}}</h5>
+                {% endfor %}
+            </span>
+            <div class="announce">
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

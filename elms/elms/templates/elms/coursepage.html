@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'course.css'%}">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="img2">
+            <img src="{% static 'img/eLMS logo.png'%}" alt="">
+        </div>
+        <ul class="nav-links">
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+            <li><a href="{% url 'search' %}">Course Search</a></li>
+            <li><a href="{% url 'login' %}">Logout</a></li>
+        </ul>
+    </div>
+    <header style="background-image: url('{% static 'img/login_bg.png'%}');">
+
+        <div class="header-content">
+            <div class="image">
+                <img src="{% static 'img/dp.png'%}" alt="">
+            </div>
+            <h2>
+                <span>011191156</span>
+                <span>Shahariar Tasin Rifat</span>
+                <!-- <span>
+                    {% for c in all %}
+                       <h2>{{c.course_title}}</h2>
+                       <h2>{{c.course_code}}</h2>
+                       <h2>{{c.section}}</h2>
+                       <h2>{{c.content}}</h2>
+                    {% endfor %}
+                </span> -->
+            </h2>
+
+        </div>
+    </header>
+
+    <section class="events">
+        <div class="title">
+            <h1>Course Overview</h1>
+            <div class="line"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="{% static 'img/Artboard 2card.png'%}" alt="">
+                <h4>Dept. of CSE</h4>
+                <h4><a href="{% url 'outline' %}">Spring 221 BIO 3105 (A) : Biology for Engineers</a></h4>
+
+            </div>
+            <div class="col">
+                <img src="{% static 'img/Artboard 2card.png'%}" alt="">
+                <h4>Dept. of CSE</h4>
+                <h4><a href="#">Spring 221 BIO 3105 (A) : Biology for Engineers</a></h4>
+
+            </div>
+            <div class="col">
+                <img src="{% static 'img/Artboard 2card.pn'%}g" alt="">
+                <h4>Dept. of CSE</h4>
+                <h4><a href="#">Spring 221 BIO 3105 (A) : Biology for Engineers</a></h4>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="{% static 'img/Artboard 2card.png'%}" alt="">
+                <h4>Dept. of CSE</h4>
+                <h4><a href="#">Spring 221 BIO 3105 (A) : Biology for Engineers</a></h4>
+
+            </div>
+            <div class="col">
+                <img src="{% static 'img/Artboard 2card.png'%}" alt="">
+                <h4>Dept. of CSE</h4>
+                <h4><a href="#">Spring 221 BIO 3105 (A) : Biology for Engineers</a></h4>
+
+            </div>
+            <div class="col">
+                <img src="{% static 'img/Artboard 2card.png'%}" alt="">
+                <h4>Dept. of CSE</h4>
+                <h4><a href="#">Spring 221 BIO 3105 (A) : Biology for Engineers</a></h4>
+
+            </div>
+        </div>
+
+        <div class="row">
+            {% for c in all %}
+            <div class="col">
+                <img src="{% static 'img/Artboard 2card.png'%}" alt="">
+                <h4>Dept. of CSE</h4>
+                <h4><a href="#">{{c.course_code}} {{c.section}} : {{c.course_title}} </a></h4>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+
+</html>
